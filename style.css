@@ -1,0 +1,85 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+}
+.imagenes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.imagenes-container .imagen {
+  position: relative;
+  margin-right: -20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+.imagenes-container .imagen img {
+  width: 300px;
+  height: 400px;
+  transition: transform 0.5s;
+  margin-left: 40px;
+  margin-bottom: 5px;
+}
+.imagenes-container .imagen .nombre {
+  position: absolute;
+  border-radius: 5px;
+  background-color: #e4e4e1;
+  background-image: radial-gradient(
+      at top center,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(0, 0, 0, 0.03) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(143, 152, 157, 0.6) 100%
+    );
+  background-blend-mode: normal, multiply;
+  color: rgb(7, 7, 6);
+  display: none;
+  min-width: 130px;
+  width: 190px;
+  top: -55px;
+  left: calc(-50% - 30px);
+  padding: 10px 15px;
+  margin-left: 210px;
+  text-size-adjust: 10%;
+}
+.imagenes-container .imagen .nombre .text {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+  align-items: center;
+}
+.imagenes-container .imagen:hover .nombre {
+  display: flex;
+  transform: translateY(-10px);
+  transform: translateX(69px);
+}
+.imagenes-container .imagen .nombre::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 40%;
+  bottom: -20px;
+  border-top: 10px solid rgb(188, 176, 176);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.imagenes-container .imagen:hover img {
+  transform: translateY(17px);
+}
+@media (max-width: 680px) {
+  .imagenes-container {
+    flex-direction: column;
+    height: 270vh;
+  }
+}
